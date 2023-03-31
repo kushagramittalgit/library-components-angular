@@ -1,0 +1,32 @@
+<p>pagination works!</p>
+
+<div class="pagination-wrapper">
+  <ul class="pagination">
+  <li [class.disabled]="page === 1">
+    <a (click)="setPage(1)" aria-label="First">
+      <span aria-hidden="true">&laquo;</span>
+    </a>
+  </li>
+  <li [class.disabled]="page === 1">
+    <a (click)="setPage(page - 1)" aria-label="Previous">
+      <span aria-hidden="true">Previous</span>
+    </a>
+  </li>
+  <li *ngFor="let pg of pages"
+    [class.active]="pg === page"
+    (click)="setPage(pg)">
+    <a>{{ pg }}</a>
+  </li>
+  <li [class.disabled]="page === totalPages">
+    <a (click)="setPage(page + 1)" aria-label="Next">
+      <span aria-hidden="true">Next</span>
+    </a>
+  </li>
+  <li [class.disabled]="page === totalPages">
+    <a (click)="setPage(totalPages)" aria-label="Last">
+      <span aria-hidden="true">&raquo;</span>
+    </a>
+  </li>
+
+</ul>
+</div>

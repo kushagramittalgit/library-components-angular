@@ -1,0 +1,9 @@
+<button (click)="showConfirmationDialog()">Dialogue Box</button>
+<div id="lib-dialog-box" *ngIf="showPopup">
+    <!-- <button (click)="showConfirmationDialog()"></button> -->
+    <lib-dialog-box title="Confirmation Dialog" message="Are you sure you want to perform this action?"
+        (submitAction)="performAction()" (cancelAction)="cancelAction()"></lib-dialog-box>
+</div>
+
+<lib-pagination> </lib-pagination>
+<router-outlet></router-outlet> 
